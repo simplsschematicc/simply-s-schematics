@@ -76,7 +76,6 @@ if st.sidebar.button("🚀 Add to Download List") and uploaded_file is not None:
         
         if save_to_github(db, db_sha):
             st.sidebar.success(f"Successfully saved permanently: {file_name}")
-            st.io_cleanup() if hasattr(st, "io_cleanup") else None
             st.rerun()
         else:
             st.sidebar.error("Failed to save to cloud storage. Check token permissions.")
